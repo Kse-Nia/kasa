@@ -22,7 +22,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 
 ## Outils utilisés
-<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" /> <img src="./kasa-app/public/react-router.svg" alt="react router" width="100" />
+<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" /> <img src="./kasa-app/public/react-router.svg" alt="react router" width="200" />
 
 |
 
