@@ -1,6 +1,6 @@
 # Projet Kasa
 <div align="center">
-<img src="./frontend/src/assets/LOGO.svg" alt="Kasa"/>
+<img src="./kasa-app/src/assets/LOGO.svg" alt="Kasa"/>
 </div>
 
 ## À propos du projet
@@ -10,7 +10,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 ## Fonctionnalités Principales
 
-<img src="./frontend/public/react_icon.svg" alt="react icon" width="100" />
+<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" />
 
 
 - **Connexion :** Authentification des utilisateurs, récupération de mot de passe perdu.
@@ -22,7 +22,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 
 ## Outils utilisés
-<img src="./frontend/public/react_icon.svg" alt="react icon" width="100" />
+<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" />
 
 
 
