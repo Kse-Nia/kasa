@@ -1,0 +1,14 @@
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  // border: 1px solid red; // Commented out
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

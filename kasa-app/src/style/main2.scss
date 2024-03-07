@@ -1,0 +1,236 @@
+@import "base";
+@import "variables";
+
+// Header styles
+.navbar {
+  margin: 2% 5% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_logo {
+    max-width: 10vw;
+    height: auto;
+
+    &-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &_links {
+    min-width: 25vw;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+
+    li {
+      margin: 0 5% 0;
+    }
+
+    &-link {
+      font-size: 1.5em;
+      color: $color-text-secondary;
+
+      &:focus {
+        border-bottom: 1px solid $color-border-focus;
+      }
+    }
+  }
+}
+
+// Banner styles
+.banner_section {
+  background-color: $color-background;
+  width: auto;
+  height: 225px;
+  margin: 0 5% 5%;
+  border-radius: 10px;
+  position: relative;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: 111px;
+  }
+}
+
+// Correcting nested selector names
+.banner_picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $color-text;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: $font-family-main;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 24px;
+  }
+}
+
+
+// Home styles
+.container {
+  width: auto;
+  padding: 0 5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    margin: 0 0 5%;
+    padding: 0;
+    width: 340px;
+    height: 340px;
+    background-color: $color-primary;
+    color: $color-text;
+    border-radius: 10px;
+
+    &_image {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    &_title {
+      max-width: 50%;
+      font-size: 1.1em;
+      font-weight: 500;
+      font-family: $font-family-main;
+      margin: 5% 5% 0;
+    }
+  }
+}
+
+// Page About styles
+.modal {
+  width: auto;
+  margin: 0 10% 5%;
+  display: flex;
+  flex-direction: column;
+
+  &_title {
+    height: 50px;
+    padding: 0 3% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: $color-primary;
+  }
+
+  h1 {
+    color: $color-text;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &_text {
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    background-color: #f6f6f6;
+    color: $color-primary;
+    font-size: 24px;
+    font-weight: 400;
+    // Transition effects commented
+  }
+}
+
+// Error Page styles
+.error_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-main;
+
+  p:nth-child(1) {
+    margin: 0;
+    font-size: 18em;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  p:nth-child(2) {
+    margin: 3% 0 7%;
+    font-size: 36px;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  .error-navlink {
+    margin-bottom: 5%;
+    color: $color-primary;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    p:nth-child(1) {
+      font-size: 6em;
+    }
+
+    p:nth-child(2) {
+      font-size: 1.1em;
+    }
+  }
+}
+
+// Footer styles
+.footer {
+  width: 100%;
+  height: 25vh;
+  margin-top: auto;
+  background-color: $color-background;
+  color: $color-text;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  font-family: $font-family-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .footer-logo {
+    margin-bottom: 2%;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: 20vh;
+    font-size: 12px;
+
+    h3 {
+      width: 40%;
+      word-break: break-word;
+      white-space: normal;
+    }
+  }
+}
