@@ -32,7 +32,7 @@
     }
 
     &-link {
-      font-size: 1.5em;
+      font-size: 1.5vw;
       color: $color-text-secondary;
 
       &:focus {
@@ -56,7 +56,6 @@
   }
 }
 
-// Correcting nested selector names
 .banner_picture {
   width: 100%;
   height: 100%;
@@ -81,7 +80,6 @@
     font-size: 24px;
   }
 }
-
 
 // Home styles
 .container {
@@ -156,7 +154,6 @@
     color: $color-primary;
     font-size: 24px;
     font-weight: 400;
-    // Transition effects commented
   }
 }
 
@@ -185,7 +182,8 @@
 
   .error-navlink {
     margin-bottom: 5%;
-    color: $color-primary;
+    // color: $color-primary;
+    color: $color-background;
     font-size: 1.1em;
     font-weight: 500;
     text-decoration: underline;
@@ -195,7 +193,6 @@
     p:nth-child(1) {
       font-size: 6em;
     }
-
     p:nth-child(2) {
       font-size: 1.1em;
     }

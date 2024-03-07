@@ -38,7 +38,7 @@ body {
   margin: 0 5% 0;
 }
 .navbar_links-link {
-  font-size: 1.5em;
+  font-size: 1.5vw;
   color: #000000;
 }
 .navbar_links-link:focus {
@@ -178,7 +178,7 @@ body {
 }
 .error_container .error-navlink {
   margin-bottom: 5%;
-  color: #ff6060;
+  color: #000000;
   font-size: 1.1em;
   font-weight: 500;
   text-decoration: underline;
