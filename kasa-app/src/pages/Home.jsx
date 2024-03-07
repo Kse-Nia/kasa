@@ -11,26 +11,37 @@ import BannerImage from "../assets/banner.png";
 const Home = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const location = useLocation();
   const text = "Chez vous, partout et ailleurs";
 
   useEffect(() => {
-    fetch("/logements.json")
-      .then((res) => {
-        if (!res) {
-          console.log("Impossible de récupérer data");
-        } else {
-          return res.json();
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/logements.json");
+        // Check response
+        if (!res.ok) {
+          throw new Error("Une erreur est survenue");
         }
-      })
-      .then((data) => {
+        const data = await res.json();
         setData(data);
-        //console.log(data);
         setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log("Une erreur est survenue");
-      });
+      } catch (err) {
+        setError(err.message);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+
   }, []);
+  if (isLoading) {
+    return <div>Chargement en cours...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  console.log(data);
 
   return (
     <>
