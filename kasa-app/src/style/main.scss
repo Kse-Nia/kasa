@@ -1,5 +1,6 @@
 @import "base";
 @import "variables";
+@import "mixins";
 
 // Header styles
 .navbar {
@@ -66,7 +67,6 @@
   justify-content: center;
   position: relative;
   filter: brightness(50%);
-  
 }
 
 .banner_text {
@@ -233,4 +233,74 @@
       white-space: normal;
     }
   }
+}
+
+// House Page
+.house {
+  @include flex-column;
+  &_cover {
+    width: 90vw;
+    height: 25vh;
+    margin: auto;
+    border-radius: 10px;
+  }
+  &_tags{
+    background-color: $color-primary;
+  }
+  &_host {
+    @include flex-row;
+    @include center-items;
+
+    &_picture {
+      border-radius: 50%;
+      width: 8vw;
+    }
+
+    &_name {
+      color: $color-primary;
+      margin-right: 10px;
+    }
+  }
+  &_title {
+    font-size: 2em;
+    font-weight: $font-weight;
+    margin: $margin;
+    color: $color-primary;
+  }
+
+  &_description-container {
+    @include flex-row;
+    justify-content: space-between;
+    margin: $margin;
+
+    &-title {
+      width: 50%;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      color: $color-text;
+    }
+
+    &__description-title {
+      border-radius: 10px;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      background-color: $color-primary;
+      width: 40%;
+      min-height: 40px;
+      margin: 1%;
+      padding: 0 2% 0;
+      color: $color-text;
+      @include flex-row;
+      @include center-items;
+    }
+
+    &__modal {
+      background-color: $color-primary;
+      @include flex-column;
+    }
+  }
+}
+
+.description_equipements {
+  @include flex-column;
 }
