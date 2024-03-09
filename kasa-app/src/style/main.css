@@ -3,7 +3,6 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  border: 1px solid red;
 }
 
 body {
@@ -256,12 +255,18 @@ body {
   background-color: green;
 }
 .house_rating {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 2%;
+  justify-content: space-between;
+  font-size: 1.5em;
+  margin-top: 5%;
 }
 .house_rating-on {
   color: #ff6060;
+}
+.house_rating-off {
+  color: #E3E3E3;
 }
 .house_cover {
   width: 90vw;
@@ -353,12 +358,4 @@ body {
 .description_equipements {
   display: flex;
   flex-direction: column;
-}
-
-.house_rating-on {
-  color: #ff6060;
-}
-
-.house_rating-off {
-  color: #E3E3E3;
 }/*# sourceMappingURL=main.css.map */

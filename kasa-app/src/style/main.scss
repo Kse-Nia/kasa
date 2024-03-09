@@ -264,11 +264,17 @@
   }
   @include flex-column;
   &_rating {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    margin-top: 2%;
+    justify-content: space-between;
+    font-size: 1.5em;
+    margin-top: 5%;
     &-on {
       color: $color-primary;
+    }
+    &-off {
+      color: #E3E3E3; 
     }
   }
 
@@ -371,11 +377,3 @@
 }
 
 
-// Rating test
-.house_rating-on {
-  color: $color-primary;
-}
-
-.house_rating-off {
-  color: #E3E3E3; 
-}
