@@ -134,6 +134,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+.modal_type {
+  color: #ffffff;
+}
 .modal_title {
   height: 50px;
   padding: 0 3% 0;
@@ -230,27 +233,84 @@ body {
   display: flex;
   flex-direction: column;
 }
+.house__content {
+  display: flex;
+  flex-direction: row;
+}
+.house-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 0 5% 0 0;
+  width: 155px;
+  height: 1vh;
+  min-height: 25px;
+  font-size: 1.4vw;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #ff6060;
+  color: #ffffff;
+}
+.house_info {
+  background-color: green;
+}
+.house_rating {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+}
+.house_rating-on {
+  color: #ff6060;
+}
 .house_cover {
   width: 90vw;
   height: 25vh;
   margin: auto;
   border-radius: 10px;
 }
-.house_tags {
-  background-color: #ff6060;
-}
-.house_host {
+.house_alltags {
   display: flex;
   flex-direction: row;
+  margin-top: 2%;
+}
+.house_tags-container {
+  display: flex;
+  flex-direction: row;
+}
+.house_location {
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+}
+.house_host {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.house_host_info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
+}
+.house_host_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.house_host_name {
+  color: #ff6060;
+  margin-right: 10px;
 }
 .house_host_picture {
   border-radius: 50%;
   width: 8vw;
 }
-.house_host_name {
-  color: #ff6060;
-  margin-right: 10px;
+.house_host_rating {
+  align-self: flex-end;
 }
 .house_title {
   font-size: 2em;
@@ -260,7 +320,7 @@ body {
 }
 .house_description-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 2% 0;
 }
@@ -293,4 +353,12 @@ body {
 .description_equipements {
   display: flex;
   flex-direction: column;
+}
+
+.house_rating-on {
+  color: #ff6060;
+}
+
+.house_rating-off {
+  color: #E3E3E3;
 }/*# sourceMappingURL=main.css.map */

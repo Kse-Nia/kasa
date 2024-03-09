@@ -131,7 +131,9 @@
   margin: 0 10% 5%;
   display: flex;
   flex-direction: column;
-
+  &_type {
+    color: $color-text;
+  }
   &_title {
     height: 50px;
     padding: 0 3% 0;
@@ -237,28 +239,90 @@
 
 // House Page
 .house {
+  &__content{
+    display: flex;
+    flex-direction: row;
+  }
+  &-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 0 5% 0 0;
+    width: 155px;
+    height: 1vh;
+    min-height: 25px;
+    font-size: 1.4vw;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: $color-primary;
+    color: $color-text;
+  }
+  &_info{
+   
+    background-color: green;
+  }
   @include flex-column;
+  &_rating {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    &-on {
+      color: $color-primary;
+    }
+  }
+
   &_cover {
     width: 90vw;
     height: 25vh;
     margin: auto;
     border-radius: 10px;
   }
-  &_tags{
-    background-color: $color-primary;
+
+  &_alltags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+  }
+
+  &_tags-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_location {
+    color: $color-text-secondary;
+    font-weight: $font-weight;
+    font-size: 18px;
   }
   &_host {
-    @include flex-row;
-    @include center-items;
-
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &_info {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &_container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      //margin: 0 5% 0;
+    }
+    &_name {
+      color: $color-primary;
+      margin-right: 10px;
+    }
     &_picture {
       border-radius: 50%;
       width: 8vw;
     }
-
-    &_name {
-      color: $color-primary;
-      margin-right: 10px;
+    &_rating {
+      align-self: flex-end;
     }
   }
   &_title {
@@ -269,7 +333,8 @@
   }
 
   &_description-container {
-    @include flex-row;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin: $margin;
 
@@ -303,4 +368,14 @@
 
 .description_equipements {
   @include flex-column;
+}
+
+
+// Rating test
+.house_rating-on {
+  color: $color-primary;
+}
+
+.house_rating-off {
+  color: #E3E3E3; 
 }
