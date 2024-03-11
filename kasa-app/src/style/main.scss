@@ -45,11 +45,11 @@
 
 // Banner styles
 .banner_section {
-  background-color: $color-background;
   width: auto;
   height: 225px;
   margin: 0 5% 5%;
   border-radius: 10px;
+  background-color: $color-background;
   position: relative;
 
   @media screen and (max-width: $breakpoint-mobile) {
@@ -62,9 +62,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include center-items-justify;
   position: relative;
   filter: brightness(50%);
 }
@@ -95,24 +93,24 @@
 
   @media screen and (max-width: $breakpoint-mobile) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include center-items-justify;
   }
 
   .card {
-    margin: 0 0 5%;
-    padding: 0;
     width: 340px;
     height: 300px;
-    background-color: $color-primary;
-    color: $color-text;
+    padding: 0;
+    margin: 0 0 5%;
     border-radius: 10px;
+    color: $color-text;
+    display: flex;
+    position: relative;
 
     &_image {
       width: 100%;
-      height: 60%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 10px 10px 0 0;
+      border-radius: 10px;
     }
 
     &_title {
@@ -120,6 +118,8 @@
       font-size: 1.1em;
       font-weight: bold;
       font-family: $font-family-main;
+      position: absolute;
+      bottom: 10px;
       margin: 5% 5% 0;
     }
   }
@@ -137,10 +137,9 @@
   &_title {
     height: 50px;
     padding: 0 3% 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-row;
     align-items: center;
+    justify-content: space-between;
     border-radius: 5px;
     background-color: $color-primary;
   }
@@ -166,9 +165,7 @@
 .error_container {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include center-align-column;
   font-family: $font-family-main;
 
   p:nth-child(1) {
@@ -216,10 +213,7 @@
   line-height: 1.5;
   text-align: center;
   font-family: $font-family-main;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include center-items-justify;
 
   .footer-logo {
     margin-bottom: 2%;
@@ -239,14 +233,12 @@
 
 // House Page
 .house {
-  &__content{
+  &__content {
     display: flex;
     flex-direction: row;
   }
   &-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-items-justify;
     padding: 5px;
     margin: 0 5% 0 0;
     width: 155px;
@@ -258,8 +250,7 @@
     background-color: $color-primary;
     color: $color-text;
   }
-  &_info{
-   
+  &_info {
     background-color: green;
   }
   @include flex-column;
@@ -274,7 +265,7 @@
       color: $color-primary;
     }
     &-off {
-      color: #E3E3E3; 
+      color: #e3e3e3;
     }
   }
 
@@ -362,7 +353,7 @@
       padding: 0 2% 0;
       color: $color-text;
       @include flex-row;
-      @include center-items;
+      @include center-items-justify;
     }
 
     &__modal {
@@ -375,5 +366,3 @@
 .description_equipements {
   @include flex-column;
 }
-
-
