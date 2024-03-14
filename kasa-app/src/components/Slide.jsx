@@ -1,31 +1,52 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Slide({ pictures }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const length = pictures.length;
 
   const nextSlide = () => {
-    setCurrentSlide(current === length - 1 ? 0 : current + 1);
+    setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
   };
 
   const previousSlide = () => {
-    setCurrentSlide(current === 0 ? length - 1 : current - 1);
+    setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);
   };
   if (!Array.isArray(pictures) || pictures.length <= 0) {
-    return null;
+    return (
+      <div>
+        <p>Aucune image à afficher</p>
+      </div>
+    );
   }
 
   return (
-    <secttion className="slides_container">
-      <FontAwesomeIcon icon="fa-sharp fa-solid fa-chevron-left" />
-      <FontAwesomeIcon icon="fa-sharp fa-solid fa-chevron-right" />
-      {pictures.map((picture, index) => {
-        {
+    <section className="slides-container">
+      <FontAwesomeIcon
+        className="slides-container__arrow slides-container__arrow--left"
+        icon={faChevronLeft}
+        onClick={previousSlide}
+      />
+      <FontAwesomeIcon
+        className="slides-container__arrow slides-container__arrow--right"
+        icon={faChevronRight}
+        onClick={nextSlide}
+      />
+      {pictures.map(
+        (picture, index) =>
           index === currentSlide && (
-            <img src="" alt="house image" className="slides_container-img" />
-          );
-        }
-      })}
-    </secttion>
+            <img
+            key={index}
+              src={picture}
+              alt="house image"
+              className="slides-container__img"
+            />
+          )
+      )}
+    </section>
   );
 }

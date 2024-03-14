@@ -5,7 +5,6 @@ import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 const HouseRating = (props) => {
   const stars = [];
   const rating = props.props;
-  console.log("props", rating);
 
   for (let i = 1; i <= 5; i++) {
     stars.push(

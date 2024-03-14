@@ -91,12 +91,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
   @media screen and (max-width: $breakpoint-mobile) {
     flex-direction: column;
     @include center-items-justify;
   }
-
   .card {
     width: 340px;
     height: 300px;
@@ -128,18 +126,28 @@
 
 // Page About styles
 .modal {
-  width: 30%;
+  //width: 100%;
+  width: 80%;
+  margin: 0 auto 2%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: $breakpoint-mobile) {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__container {
     margin: 5% 0 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    &--type {
+      width: 50%;
+    }
     @media screen and (max-width: $breakpoint-mobile) {
       flex-direction: column;
       align-items: center;
@@ -147,9 +155,8 @@
     }
   }
   &_title {
-    //min-width: 30vw;
+    width: 100%;
     height: 50px;
-    padding: 0 3% 0;
     @include flex-row;
     align-items: center;
     justify-content: space-between;
@@ -159,9 +166,16 @@
       width: 100%;
     }
     &--name {
+      padding: 0 3% 0;
       color: $color-text;
       font-size: 24px;
       font-weight: 500;
+    }
+    &--icon {
+      padding: 0 3% 0;
+      color: $color-text;
+      font-size: 24px;
+      cursor: pointer;
     }
   }
 
@@ -217,6 +231,7 @@
 // House Page
 .house {
   &__content {
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -228,7 +243,6 @@
     @include center-items-justify;
     padding: 5px;
     margin: 0 5% 0 0;
-    //width: 155px;
     height: 1vh;
     min-height: 30px;
     font-size: 1em;
@@ -252,14 +266,16 @@
       color: #e3e3e3;
     }
     @media screen and (max-width: $breakpoint-mobile) {
-     max-width: 50%;
-     font-size: 1em;
+      max-width: 50%;
+      font-size: 1em;
     }
   }
 
   &_alltags {
+    width: 60%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 2%;
   }
 
@@ -287,8 +303,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     &--picture {
       border-radius: 50%;
       width: 8vw;
@@ -354,7 +369,6 @@
 }
 // Slides
 .slides-container {
-  //width: 100vw;
   width: 100%;
   position: relative;
   display: flex;
