@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Slide from "../components/Slide";
 import Tags from "../components/Tags";
 import HouseRating from "../components/HouseRating";
-import { useLocation, useParams } from "react-router-dom"; // hook
-import IconOpen from "../assets/row.svg";
-import IconClose from "../assets/row2.svg";
-
-/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as fullStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
- */
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "../components/Modal";
+import { useParams } from "react-router-dom"; // hook
 
 const House = (props) => {
   const { id } = useParams();
   const [house, setHouse] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Close/Open modal
@@ -48,22 +40,24 @@ const House = (props) => {
         setHouse(houseHouse);
       } catch (err) {
         setError(err.message);
-      } finally {
-        setIsLoading(false);
-      }
+      } // catch error
     };
-
     fetchHouses();
   }, [id]);
 
-  if (isLoading) return <p>Chargement en cours...</p>;
   if (!house) return <p>Aucune maison n'a été trouvée</p>; // redir error
   if (error) return <p>Erreur : {error}</p>;
 
+  // Divide name
+  const name = house.host.name;
+  const [firstName, lastName] = name.split(" ");
+
   return (
-    <div className="main">
-      <div className="house">
-        <img className="house_cover" src={house.cover} alt="cover" />
+    <main>
+      <section className="house">
+        <div className="container">
+          <Slide pictures={house.pictures} />
+        </div>
         <div className="house__content">
           <div className="house_info">
             <h1 className="house_title">{house.title}</h1>
@@ -75,66 +69,44 @@ const House = (props) => {
             </div>
           </div>
 
-          <div className="house_host_info">
-            <div className="house_host">
-              <div className="house_host_container">
-                <h3 className="house_host_name">{house.host.name}</h3>
+          <div className="host">
+            <div className="host__maincontainer">
+              <div className="host__container">
+                <div className="host__namecontainer">
+                  <p className="host--name">{firstName}</p>
+                  <p className="host--name">{lastName}</p>
+                </div>
                 <img
-                  className="house_host_picture"
+                  className="host__container--picture"
                   src={house.host.picture}
                   alt="host"
                 />
               </div>
-              <HouseRating rating={house.rating} />
+              <HouseRating props={house.rating} />
             </div>
           </div>
         </div>
-      </div>
-      <div className="house_description-container">
-        <div
-          className="house_description-container_title"
-          onClick={toggleModalDescription}
-        >
-          <div className="modal_title">
-            <h2 className="modal_type">Description</h2>
-            <img
-              src={openDescription ? IconOpen : IconClose}
-              alt="icon"
-              onClick={() => setOpenDescription((prev) => !prev)}
-            />
-          </div>
-        </div>
-        {openDescription && (
-          <div className="house_modal">
-            <div className="house_description-container_title"></div>
-            <div>
-              <p>{house.description}</p>
-            </div>
-          </div>
-        )}
+      </section>
 
-        <div
-          className="house_description-container_title"
-          onClick={toggleModalEquipments}
-        >
-          <div className="modal_title">
-            <h2 className="modal_type">Equipment</h2>
-            <img
-              src={openDescription ? IconOpen : IconClose}
-              alt="icon"
-              onClick={() => setOpenEquipment((prev) => !prev)}
-            />
-          </div>
+      <section className="modal__container">
+        <div className="modal__container--type">
+        <Modal
+          title="Description"
+          content={house.description}
+          isOpen={openDescription}
+          onToggle={toggleModalDescription}
+        />
         </div>
-        {openEquipment && (
-          <div className="house_modal">
-            <div>
-              <p>{house.equipments.join(", ")}</p>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+        <div className="modal__container--type">
+        <Modal
+          title="Equipements"
+          content={house.equipments}
+          isOpen={openEquipment}
+          onToggle={toggleModalEquipments}
+        />
+        </div>
+      </section>
+    </main>
   );
 };
 

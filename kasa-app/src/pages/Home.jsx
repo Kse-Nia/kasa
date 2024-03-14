@@ -33,7 +33,6 @@ const Home = () => {
     };
 
     fetchData();
-
   }, []);
   if (isLoading) {
     return <div>Chargement en cours...</div>;
@@ -41,7 +40,6 @@ const Home = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  console.log(data);
 
   return (
     <>
