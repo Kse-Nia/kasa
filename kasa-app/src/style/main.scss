@@ -4,7 +4,7 @@
 
 // Header styles
 .navbar {
-  margin: 2% 5% 5%;
+  margin: 2% 5% 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +26,7 @@
     ul {
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
     }
 
     li {
@@ -34,58 +35,58 @@
 
     &-link {
       font-size: 1.5vw;
-      color: $color-text-secondary;
+      color: $color-background;
 
       &:focus {
-        border-bottom: 1px solid $color-border-focus;
+        border-bottom: 1px solid $color-background;
       }
     }
   }
 }
 
 // Banner styles
-.banner_section {
-  width: auto;
-  height: 225px;
-  margin: 0 5% 5%;
-  border-radius: 10px;
-  background-color: $color-background;
-  position: relative;
+.banner {
+  &_section {
+    width: auto;
+    height: 225px;
+    margin: 0 5% 5%;
+    border-radius: $radius;
+    background-color: $color-background;
+    position: relative;
 
-  @media screen and (max-width: $breakpoint-mobile) {
-    height: 111px;
+    @media screen and (max-width: $breakpoint-mobile) {
+      height: 111px;
+    }
   }
-}
+  &_picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $radius;
+    @include center-items-justify;
+    position: relative;
+    filter: brightness(50%);
+  }
+  &_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-text;
+    font-size: 2em;
+    font-weight: 500;
+    font-family: $font-family-main;
 
-.banner_picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  @include center-items-justify;
-  position: relative;
-  filter: brightness(50%);
-}
-
-.banner_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: $color-text;
-  font-size: 2em;
-  font-weight: 500;
-  font-family: $font-family-main;
-
-  @media screen and (max-width: $breakpoint-mobile) {
-    font-size: 24px;
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 24px;
+    }
   }
 }
 
 // Home styles
 .container {
   width: auto;
-  padding: 0 5% 0;
+  padding: 0 0 5%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -101,7 +102,7 @@
     height: 300px;
     padding: 0;
     margin: 0 0 5%;
-    border-radius: 10px;
+    border-radius: $radius;
     color: $color-text;
     display: flex;
     position: relative;
@@ -110,7 +111,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: $radius;
     }
 
     &_title {
@@ -127,27 +128,41 @@
 
 // Page About styles
 .modal {
-  width: auto;
-  margin: 0 10% 5%;
+  width: 30%;
   display: flex;
   flex-direction: column;
-  &_type {
-    color: $color-text;
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
+  &__container {
+    margin: 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: center;
+      min-width: 100%;
+    }
   }
   &_title {
+    //min-width: 30vw;
     height: 50px;
     padding: 0 3% 0;
     @include flex-row;
     align-items: center;
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: $radius;
     background-color: $color-primary;
-  }
-
-  h1 {
-    color: $color-text;
-    font-size: 24px;
-    font-weight: 500;
+    @media screen and (max-width: $breakpoint-mobile) {
+      width: 100%;
+    }
+    &--name {
+      color: $color-text;
+      font-size: 24px;
+      font-weight: 500;
+    }
   }
 
   &_text {
@@ -158,6 +173,7 @@
     color: $color-primary;
     font-size: 24px;
     font-weight: 400;
+    flex-grow: 1;
   }
 }
 
@@ -181,22 +197,192 @@
     font-weight: 500;
     color: $color-primary;
   }
-
   .error-navlink {
     margin-bottom: 5%;
-    // color: $color-primary;
     color: $color-background;
     font-size: 1.1em;
     font-weight: 500;
     text-decoration: underline;
   }
-
   @media screen and (max-width: $breakpoint-mobile) {
     p:nth-child(1) {
       font-size: 6em;
     }
     p:nth-child(2) {
       font-size: 1.1em;
+    }
+  }
+}
+
+// House Page
+.house {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+  &-tag {
+    @include center-items-justify;
+    padding: 5px;
+    margin: 0 5% 0 0;
+    //width: 155px;
+    height: 1vh;
+    min-height: 30px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: $radius;
+    background-color: $color-primary;
+    color: $color-text;
+  }
+  @include flex-column;
+  &_rating {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5em;
+    margin-top: 5%;
+    &-on {
+      color: $color-primary;
+    }
+    &-off {
+      color: #e3e3e3;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+     max-width: 50%;
+     font-size: 1em;
+    }
+  }
+
+  &_alltags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+  }
+
+  &_tags-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_location {
+    color: $color-background;
+    font-weight: $font-weight;
+    font-size: 18px;
+  }
+  &_title {
+    font-size: 2em;
+    font-weight: $font-weight;
+    margin: $margin;
+    color: $color-primary;
+  }
+}
+
+.host {
+  display: flex;
+  &__maincontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--picture {
+      border-radius: 50%;
+      width: 8vw;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &--picture {
+      border-radius: 50%;
+      width: 64px;
+      @media screen and (max-width: $breakpoint-mobile) {
+        width: 32px;
+      }
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: row;
+    }
+  }
+  &__namecontainer {
+    display: flex;
+    flex-direction: column;
+  }
+  &--name {
+    color: $color-primary;
+    margin-right: 10px;
+    font-size: 1.2em;
+    white-space: pre-wrap;
+  }
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: $margin;
+
+  &__container_title {
+    border-radius: $radius;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    background-color: $color-primary;
+    width: 40%;
+    min-height: 40px;
+    margin: 1%;
+    padding: 0 2% 0;
+    color: $color-text;
+    @include flex-row;
+    @include center-items-justify;
+  }
+
+  .house_modal {
+    background-color: $color-primary;
+    @include flex-column;
+  }
+}
+// Slides
+.slides-container {
+  //width: 100vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 100%;
+    height: 50vh;
+    border-radius: $radius;
+    object-fit: cover; /////  !!!!!!! Demander
+  }
+
+  &__arrow {
+    position: absolute;
+    color: #fff;
+    font-size: 3em;
+    cursor: pointer;
+    z-index: 1;
+
+    &--left {
+      left: 10px;
+      margin: 0;
+    }
+
+    &--right {
+      right: 10px;
+      margin: 0;
     }
   }
 }
@@ -229,140 +415,4 @@
       white-space: normal;
     }
   }
-}
-
-// House Page
-.house {
-  &__content {
-    display: flex;
-    flex-direction: row;
-  }
-  &-tag {
-    @include center-items-justify;
-    padding: 5px;
-    margin: 0 5% 0 0;
-    width: 155px;
-    height: 1vh;
-    min-height: 25px;
-    font-size: 1.4vw;
-    font-weight: 700;
-    border-radius: 10px;
-    background-color: $color-primary;
-    color: $color-text;
-  }
-  &_info {
-    background-color: green;
-  }
-  @include flex-column;
-  &_rating {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 1.5em;
-    margin-top: 5%;
-    &-on {
-      color: $color-primary;
-    }
-    &-off {
-      color: #e3e3e3;
-    }
-  }
-
-  &_cover {
-    width: 90vw;
-    height: 25vh;
-    margin: auto;
-    border-radius: 10px;
-  }
-
-  &_alltags {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
-  }
-
-  &_tags-container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &_location {
-    color: $color-text-secondary;
-    font-weight: $font-weight;
-    font-size: 18px;
-  }
-  &_host {
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    &_info {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    &_container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      //margin: 0 5% 0;
-    }
-    &_name {
-      color: $color-primary;
-      margin-right: 10px;
-    }
-    &_picture {
-      border-radius: 50%;
-      width: 8vw;
-    }
-    &_rating {
-      align-self: flex-end;
-    }
-  }
-  &_title {
-    font-size: 2em;
-    font-weight: $font-weight;
-    margin: $margin;
-    color: $color-primary;
-  }
-
-  &_description-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: $margin;
-
-    &-title {
-      width: 50%;
-      font-size: $font-size;
-      font-weight: $font-weight;
-      color: $color-text;
-    }
-
-    &__description-title {
-      border-radius: 10px;
-      font-size: $font-size;
-      font-weight: $font-weight;
-      background-color: $color-primary;
-      width: 40%;
-      min-height: 40px;
-      margin: 1%;
-      padding: 0 2% 0;
-      color: $color-text;
-      @include flex-row;
-      @include center-items-justify;
-    }
-
-    &__modal {
-      background-color: $color-primary;
-      @include flex-column;
-    }
-  }
-}
-
-.description_equipements {
-  @include flex-column;
 }
