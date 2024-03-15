@@ -9,7 +9,21 @@ import IconClose from "../assets/row2.svg";
 const About = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [isOpen, setIsOpen] = useState({});
+
+  // Close/Open modal
+  const [openModalIds, setOpenModalIds] = useState(new Set()); // Set of open modals id
+
+  const onToggle = (id) => {
+    setOpenModalIds(prevIds => {
+      const newIds = new Set(prevIds); 
+      if (newIds.has(id)) {
+        newIds.delete(id); 
+      } else {
+        newIds.add(id); 
+      }
+      return newIds;
+    });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +42,7 @@ const About = () => {
     fetchData();
   }, []);
 
+
   return (
     <>
       <div>
@@ -36,9 +51,11 @@ const About = () => {
       {data &&
         data.map((section, index) => (
           <Modal
-            key={section.id}
+            key={index}
             title={section.title}
-            content={section.title}
+            content={section.text}
+            isOpen={openModalIds.has(index)}
+          onToggle={() => onToggle(index)}
           />
         ))}
     </>

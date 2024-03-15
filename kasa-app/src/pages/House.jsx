@@ -10,7 +10,7 @@ const House = (props) => {
   const [house, setHouse] = useState(null);
   const [error, setError] = useState(null);
 
-  // Close/Open modal
+  // Close/Open each type of modal
   const [openDescription, setOpenDescription] = useState(false);
   const [openEquipment, setOpenEquipment] = useState(false);
 
@@ -40,7 +40,7 @@ const House = (props) => {
         setHouse(houseHouse);
       } catch (err) {
         setError(err.message);
-      } // catch error
+      }
     };
     fetchHouses();
   }, [id]);
@@ -89,22 +89,20 @@ const House = (props) => {
       </section>
 
       <section className="modal__container">
-        <div className="modal__container--type">
         <Modal
           title="Description"
           content={house.description}
           isOpen={openDescription}
           onToggle={toggleModalDescription}
+          className="modal--housePage"
         />
-        </div>
-        <div className="modal__container--type">
         <Modal
           title="Equipements"
           content={house.equipments}
           isOpen={openEquipment}
           onToggle={toggleModalEquipments}
+          className="modal--housePage"
         />
-        </div>
       </section>
     </main>
   );
