@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slide from "../components/Slide";
 import Tags from "../components/Tags";
+import Tag from "../components/Tag";
 import HouseRating from "../components/HouseRating";
 import Modal from "../components/Modal";
 import { useParams } from "react-router-dom"; // hook
@@ -45,7 +46,7 @@ const House = (props) => {
     fetchHouses();
   }, [id]);
 
-  if (!house) return <p>Aucune maison n'a été trouvée</p>; // redir error
+  if (!house) return <p>Aucune maison n'a été trouvée</p>; // redir error; modif redirect page error
   if (error) return <p>Erreur : {error}</p>;
 
   // Divide name
@@ -62,9 +63,9 @@ const House = (props) => {
           <div className="house_info">
             <h1 className="house_title">{house.title}</h1>
             <h2 className="house_location">{house.location}</h2>
-            <div className="house_alltags">
+            <div className="house__tags">
               {house.tags.map((tags) => {
-                return <Tags key={tags} tags={tags} />;
+                return <Tag key={tags} tags={tags} />;
               })}
             </div>
           </div>
@@ -98,7 +99,13 @@ const House = (props) => {
         />
         <Modal
           title="Equipements"
-          content={house.equipments}
+          content={house.equipments.map((equipment, index) => (
+            <ul>
+              <li className="modal_text-equipment" key={index}>
+                {equipment}{" "}
+              </li>
+            </ul>
+          ))}
           isOpen={openEquipment}
           onToggle={toggleModalEquipments}
           className="modal--housePage"
