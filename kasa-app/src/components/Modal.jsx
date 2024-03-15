@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import IconOpen from "../assets/row.svg";
 import IconClose from "../assets/row2.svg";
 
-export default function Modal({ title, content, isOpen, onToggle }) {
+export default function Modal({ title, content, isOpen, onToggle, className }) {
   return (
-    <div className="modal">
+    <div className={`modal ${className}`}>
       <div className="modal_title">
         <h1 className="modal_title--name">{title}</h1>
         <img
