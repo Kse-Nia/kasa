@@ -26,25 +26,39 @@ export default function Slide({ pictures }) {
 
   return (
     <section className="slides-container">
-      <FontAwesomeIcon
-        className="slides-container__arrow slides-container__arrow--left"
-        icon={faChevronLeft}
-        onClick={previousSlide}
-      />
-      <FontAwesomeIcon
-        className="slides-container__arrow slides-container__arrow--right"
-        icon={faChevronRight}
-        onClick={nextSlide}
-      />
+      {length > 1 && (
+        <>
+          <FontAwesomeIcon
+            className="slides-container__arrow slides-container__arrow--left"
+            icon={faChevronLeft}
+            onClick={previousSlide}
+          />
+          <FontAwesomeIcon
+            className="slides-container__arrow slides-container__arrow--right"
+            icon={faChevronRight}
+            onClick={nextSlide}
+          />
+        </>
+      )}
       {pictures.map(
         (picture, index) =>
           index === currentSlide && (
-            <img
-            key={index}
-              src={picture}
-              alt="house image"
-              className="slides-container__img"
-            />
+            <div   key={index} className="slides-container--bloc">
+              <img
+              
+                src={picture}
+                alt="house image"
+                className="slides-container__img"
+              />
+              {length > 1 && (
+                <div>
+                  <span className="slides-container__nbr">
+                    {currentSlide + 1} / {length}
+                  </span>
+                </div>
+              )}
+              <div />
+            </div>
           )
       )}
     </section>
