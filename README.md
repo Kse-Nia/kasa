@@ -10,9 +10,6 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 ## Fonctionnalités Principales
 
-<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" />
-
-
 - **Connexion :** Authentification des utilisateurs, récupération de mot de passe perdu.
 - **Inscription :** Formulaire d'inscription pour les élèves et les tuteurs.
 - **Tableau de bord :** Vue d'ensemble du site. Possibilité de visualiser les tâches événements les plus importants. Affichage des notifications pour les nouveaux messages.
@@ -43,7 +40,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 ## Le site
 
-Vous pouvez également consulter le site live sur cette adresse : (add link here)
+Vous pouvez également consulter le site live sur cette adresse : [Kasa](kasa.kseniya-mudrakova.fr)
 
 ## Contact
 
