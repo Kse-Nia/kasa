@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
+import ErrorPage from "../pages/Error404";
 import Slide from "../components/Slide";
-import Tags from "../components/Tags";
 import Tag from "../components/Tag";
 import HouseRating from "../components/HouseRating";
 import Modal from "../components/Modal";
-import { useParams } from "react-router-dom"; // hook
+import { useParams, useNavigate } from "react-router-dom"; // hook
 
-const House = (props) => {
+const House = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [house, setHouse] = useState(null);
+  const [houseFound, setHouseFound] = useState(true);
   const [error, setError] = useState(null);
 
   // Close/Open each type of modal
@@ -34,11 +36,11 @@ const House = (props) => {
           );
         }
         const houses = await res.json();
-        const houseHouse = houses.find((house) => house.id.toString() === id);
-        if (!houseHouse) {
+        const houseId = houses.find((house) => house.id.toString() === id);
+        if (!houseId) {
           throw new Error("Désolé, maison introuvable..");
         }
-        setHouse(houseHouse);
+        setHouse(houseId);
       } catch (err) {
         setError(err.message);
       }
@@ -46,7 +48,7 @@ const House = (props) => {
     fetchHouses();
   }, [id]);
 
-  if (!house) return <p>Aucune maison n'a été trouvée</p>; // redir error; modif redirect page error
+  if (!house) return <ErrorPage />;
   if (error) return <p>Erreur : {error}</p>;
 
   // Divide name
@@ -80,10 +82,10 @@ const House = (props) => {
                 <img
                   className="host__container--picture"
                   src={house.host.picture}
-                  alt="host"
+                  alt={house.host.name}
                 />
               </div>
-              <HouseRating props={house.rating} />
+              <HouseRating rating={house.rating} />
             </div>
           </div>
         </div>
@@ -102,7 +104,7 @@ const House = (props) => {
           content={house.equipments.map((equipment, index) => (
             <ul>
               <li className="modal_text-equipment" key={index}>
-                {equipment}{" "}
+                {equipment}
               </li>
             </ul>
           ))}
