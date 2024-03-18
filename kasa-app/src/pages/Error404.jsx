@@ -1,9 +1,7 @@
 import React from "react";
-import { NavLink, useRouteError } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const ErrorPage = () => {
-  const error = useRouteError();
-
   return (
     <div className="error_container">
       <p className="">404</p>

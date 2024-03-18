@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Picture from "../assets/banner2.png";
 import Modal from "../components/Modal";
-import IconOpen from "../assets/row.svg";
-import IconClose from "../assets/row2.svg";
 
 const About = () => {
   const [data, setData] = useState(null);
@@ -35,8 +32,8 @@ const About = () => {
         }
         const data = await res.json();
         setData(data);
-      } catch (err) {
-        setError(err.message);
+      } catch (error) {
+        setError(error.message);
       }
     };
     fetchData();
