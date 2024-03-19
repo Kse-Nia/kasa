@@ -1,6 +1,6 @@
-@import "base";
 @import "variables";
 @import "mixins";
+@import "base";
 
 // Header styles
 .navbar {
@@ -273,6 +273,7 @@
 .house {
   &__content {
     height: auto;
+    margin-top: 2%;
     @include flex-row;
     justify-content: space-between;
     @media screen and (max-width: $breakpoint-mobile) {
@@ -299,7 +300,7 @@
   }
   &_location {
     color: $color-background;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 18px;
   }
   &_title {
@@ -322,7 +323,7 @@
   display: flex;
   min-height: 30px;
   margin-right: 10px;
-  padding: 0 10px 0;
+  padding: 0 30px 0;
   background-color: $color-primary;
   color: #e3e3e3;
   border-radius: 20px;
@@ -368,8 +369,12 @@
   &--name {
     color: $color-primary;
     margin-right: 10px;
-    font-size: $font-size;
+    font-size: 1em;
     white-space: pre-wrap;
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 1.3em;
+      font-weight: 500;
+    }
   }
 }
 
