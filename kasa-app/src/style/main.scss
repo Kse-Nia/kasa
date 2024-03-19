@@ -204,9 +204,7 @@
     font-weight: 400;
     flex-grow: 1;
     &.open {
-      //color: $color-background;
       font-weight: 400;
-      // font-size: 1em;
     }
     &-equipment {
       font-family: $font-family-main;
@@ -257,36 +255,6 @@
 
 // House Page
 .house {
-  &__tags {
-    width: auto;
-    justify-content: space-between;
-    @include flex-row;
-    background-color: orange;
-    &_container {
-      width: auto;
-      height: 25px;
-      padding: 1% 5% 1%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: green;
-      border-radius: $radius;
-      width: auto;
-      margin-top: 2%;
-      &--tag {
-        display: inline-block;
-        white-space: nowrap;
-        color: $color-text;
-        font-size: 1em;
-        font-weight: 700;
-        margin: 0 auto 0 0;
-        @media screen and (max-width: $breakpoint-mobile) {
-          font-size: 0.8em;
-        }
-      }
-    }
-  }
-
   &__content {
     height: auto;
     @include flex-row;
@@ -315,8 +283,7 @@
   }
   &_location {
     color: $color-background;
-    //font-weight: $font-weight;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 18px;
   }
   &_title {
@@ -327,6 +294,25 @@
   }
 }
 
+/// Tags test
+.house__tags {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.house__tags_container--tag {
+  display: flex;
+  min-height: 30px;
+  margin-right: 10px;
+  padding: 0 10px 0;
+  background-color: $color-primary;
+  color: #e3e3e3;
+  border-radius: $radius;
+  align-items: center;
+  justify-content: center;
+}
 .host {
   display: flex;
   &__maincontainer {
@@ -341,6 +327,7 @@
     @media screen and (max-width: $breakpoint-mobile) {
       flex-direction: row-reverse;
       justify-content: space-between;
+      margin-top: 3%;
     }
   }
   &__container {
@@ -405,7 +392,6 @@
   }
   &__nbr {
     position: absolute;
-    //top: 50%;
     bottom: 10px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -422,7 +408,6 @@
     border-radius: $radius;
     object-fit: cover;
   }
-
   &__arrow {
     position: absolute;
     color: $color-text;

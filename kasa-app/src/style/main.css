@@ -283,38 +283,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-.house__tags {
-  width: auto;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-  background-color: orange;
-}
-.house__tags_container {
-  width: auto;
-  height: 25px;
-  padding: 1% 5% 1%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: green;
-  border-radius: 10px;
-  width: auto;
-  margin-top: 2%;
-}
-.house__tags_container--tag {
-  display: inline-block;
-  white-space: nowrap;
-  color: #ffffff;
-  font-size: 1em;
-  font-weight: 700;
-  margin: 0 auto 0 0;
-}
-@media screen and (max-width: 550px) {
-  .house__tags_container--tag {
-    font-size: 0.8em;
-  }
-}
 .house__content {
   height: auto;
   display: flex;
@@ -348,7 +316,7 @@ main {
 }
 .house_location {
   color: #000000;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
 }
 .house_title {
@@ -356,6 +324,25 @@ main {
   font-weight: 500;
   margin: 2% 0;
   color: #ff6060;
+}
+
+.house__tags {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.house__tags_container--tag {
+  display: flex;
+  min-height: 30px;
+  margin-right: 10px;
+  padding: 0 10px 0;
+  background-color: #ff6060;
+  color: #e3e3e3;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .host {
@@ -375,6 +362,7 @@ main {
   .host__maincontainer {
     flex-direction: row-reverse;
     justify-content: space-between;
+    margin-top: 3%;
   }
 }
 .host__container {
