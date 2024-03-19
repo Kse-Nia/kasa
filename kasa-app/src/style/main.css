@@ -58,7 +58,7 @@ main {
   background-color: #000000;
   position: relative;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .banner_section {
     height: 111px;
   }
@@ -86,7 +86,7 @@ main {
   font-weight: 500;
   font-family: "Montserrat";
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .banner_text {
     font-size: 24px;
   }
@@ -94,18 +94,19 @@ main {
 
 .container {
   width: auto;
-  padding: 0 0 5%;
+  margin: 0 5% 5%;
+  padding: 3%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.4));
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .container {
     flex-direction: column;
-    display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
   }
 }
@@ -118,6 +119,12 @@ main {
   color: #ffffff;
   display: flex;
   position: relative;
+}
+@media screen and (max-width: 800px) {
+  .container .card {
+    width: 85vw;
+    height: 200px;
+  }
 }
 .container .card_image {
   width: 100%;
@@ -160,9 +167,9 @@ main {
 .modal--housePage:last-child {
   margin-left: 2%;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .modal--housePage {
-    width: 100%;
+    min-width: 100%;
   }
   .modal--housePage:first-child {
     margin: 0 0 2%;
@@ -171,7 +178,7 @@ main {
     margin: 0;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .modal {
     width: 90%;
     margin: 0 auto 5%;
@@ -187,7 +194,7 @@ main {
   justify-content: space-between;
   align-items: start;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .modal__container {
     flex-direction: column;
     align-items: center;
@@ -204,7 +211,7 @@ main {
   border-radius: 10px;
   background-color: #ff6060;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .modal_title {
     width: 100%;
   }
@@ -226,8 +233,8 @@ main {
   width: 100%;
   height: auto;
   padding: 5%;
-  background-color: #f6f6f6;
-  color: #ff6060;
+  background-color: #ffffff;
+  color: #000000;
   font-size: 1.5em;
   font-weight: 400;
   flex-grow: 1;
@@ -270,7 +277,7 @@ main {
   font-weight: 500;
   text-decoration: underline;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .error_container p:nth-child(1) {
     font-size: 6em;
   }
@@ -289,7 +296,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .house__content {
     flex-direction: column;
   }
@@ -308,7 +315,7 @@ main {
 .house_rating-off {
   color: #e3e3e3;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .house_rating {
     max-width: 50%;
     font-size: 1em;
@@ -358,7 +365,7 @@ main {
   border-radius: 50%;
   width: 8vw;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .host__maincontainer {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -375,12 +382,12 @@ main {
   border-radius: 50%;
   width: 64px;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .host__container--picture {
     width: 32px;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .host__container {
     flex-direction: row;
   }
@@ -446,7 +453,7 @@ main {
   font-size: 1.1em;
   font-weight: 700;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .slides-container__nbr {
     display: none;
   }
@@ -493,7 +500,7 @@ main {
 .footer .footer-logo {
   margin-bottom: 2%;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .footer {
     height: 20vh;
     font-size: 12px;
