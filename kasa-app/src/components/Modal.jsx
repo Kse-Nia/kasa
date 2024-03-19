@@ -14,7 +14,7 @@ export default function Modal({ title, content, isOpen, onToggle, className }) {
           onClick={onToggle}
         />
       </div>
-      {isOpen && <p className="modal_text open">{content}</p>}
+      {isOpen && <div className="modal_text open">{content}</div>}
     </div>
   );
 }

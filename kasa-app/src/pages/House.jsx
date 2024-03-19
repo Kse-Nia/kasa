@@ -32,7 +32,7 @@ const House = () => {
         const res = await fetch("/logements.json");
         if (!res.ok) {
           throw new Error(
-            "Une erreur est survenue, impossible d'afficher la maison"
+            "Une erreur est survenue, impossible d'afficher la maison séléctionnée."
           );
         }
         const houses = await res.json();
@@ -48,8 +48,8 @@ const House = () => {
     fetchHouses();
   }, [id]);
 
-  if (!house) return <ErrorPage />;
-  if (error) return <p>Erreur : {error}</p>;
+  if (!house) return <ErrorPage />; // Redirect to 404 page if house not found
+  if (error) return <p>Erreur : {error}</p>; // Display error message if fetch failed
 
   // Divide name
   const name = house.host.name;
@@ -58,7 +58,7 @@ const House = () => {
   return (
     <main>
       <section className="house">
-        <div className="container">
+        <div className="container--house">
           <Slide pictures={house.pictures} />
         </div>
         <div className="house__content">
@@ -101,13 +101,15 @@ const House = () => {
         />
         <Modal
           title="Equipements"
-          content={house.equipments.map((equipment, index) => (
+          content={
             <ul>
-              <li className="modal_text-equipment" key={index}>
-                {equipment}
-              </li>
+              {house.equipments.map((equipment, index) => (
+                <li className="modal_text-equipment" key={index}>
+                  {equipment}
+                </li>
+              ))}
             </ul>
-          ))}
+          }
           isOpen={openEquipment}
           onToggle={toggleModalEquipments}
           className="modal--housePage"

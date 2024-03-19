@@ -21,7 +21,7 @@ const Home = () => {
         if (!res.ok) {
           throw new Error("Une erreur est survenue");
         }
-        const data = await res.json();
+        const data = await res.json(); // Parse response
         setData(data);
       } catch (err) {
         setError(err.message);
@@ -38,7 +38,6 @@ const Home = () => {
   return (
     <>
       <Banner picture={BannerImage} text={text} />
-      <div className="container"></div>
       {data && (
         <div className="container">
           {data.map((house) => (
