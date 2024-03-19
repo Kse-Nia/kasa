@@ -1,6 +1,6 @@
 # Projet Kasa
 <div align="center">
-<img src="./kasa-app/src/assets/LOGO.svg" alt="Kasa"/>
+<img src="src/assets/LOGO.svg" alt="Kasa"/>
 </div>
 
 ## À propos du projet
@@ -19,7 +19,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 
 ## Outils utilisés
-<img src="./kasa-app/public/react_icon.svg" alt="react icon" width="100" /> <img src="./kasa-app/public/react-router.svg" alt="react router" width="200" />
+<img src="public/react_icon.svg" alt="react icon" width="100" /> <img src="public/react-router.svg" alt="react router" width="200" />
 
 |
 
@@ -43,4 +43,4 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 Vous pouvez également consulter le site live sur cette adresse : [Kasa](kasa.kseniya-mudrakova.fr)
 
 ## Contact
-
+[kseniyamudrakovadev@gmail.com](kseniyamudrakovadev@gmail.com)
