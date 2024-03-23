@@ -217,8 +217,8 @@
       font-size: 24px;
       cursor: pointer;
     }
-    .rotation{
-      animation: rotation .5s forwards;
+    .rotation {
+      animation: rotation 0.5s forwards;
     }
   }
 
@@ -239,13 +239,13 @@
       font-weight: 400;
       height: auto;
       font-size: 1em;
-      animation: apparition .2s forwards;
+      animation: apparition 0.2s forwards;
     }
     &.close {
       font-weight: 400;
       height: 0;
       font-size: 0;
-      animation: disparition .2s forwards;
+      animation: disparition 0.2s forwards;
     }
     &-equipment {
       font-family: $font-family;
@@ -497,5 +497,12 @@
       word-break: break-word;
       white-space: normal;
     }
+  }
+}
+
+.about {
+  min-height: 70vh;
+  @media screen and (max-width: $breakpoint-mobile) {
+    min-height: 40vh;
   }
 }

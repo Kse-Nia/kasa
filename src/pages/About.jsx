@@ -41,7 +41,7 @@ const About = () => {
 
 
   return (
-    <>
+    <section className="about">
       <div>
         <Banner picture={Picture} />
       </div>
@@ -55,7 +55,7 @@ const About = () => {
           onToggle={() => onToggle(index)}
           />
         ))}
-    </>
+    </section>
   );
 };
 

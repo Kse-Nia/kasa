@@ -19,6 +19,7 @@ body {
 }
 
 main {
+  height: auto;
   margin: 0 5vw 0;
 }
 
@@ -600,5 +601,14 @@ footer {
     width: 40%;
     word-break: break-word;
     white-space: normal;
+  }
+}
+
+.about {
+  min-height: 70vh;
+}
+@media screen and (max-width: 800px) {
+  .about {
+    min-height: 40vh;
   }
 }/*# sourceMappingURL=main.css.map */
