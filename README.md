@@ -35,7 +35,7 @@ Kasa est dans le métier de la location d’appartements entre particuliers depu
 
 ## Le site
 
-Vous pouvez également consulter le site live sur cette adresse : [Kasa](https://kasa-gules-omega.vercel.app/)
+Vous pouvez également consulter le site live sur cette adresse : [Kasa](https://kasa.kseniya-mudrakova.fr/)
 
 ## Contact
 [kseniyamudrakovadev@gmail.com](kseniyamudrakovadev@gmail.com)
