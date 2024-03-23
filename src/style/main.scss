@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 @import "base";
+@import "animations";
 
 // Header styles
 .navbar {
@@ -139,11 +140,13 @@
 // Page About styles
 .modal {
   width: 80%;
+  height: auto;
   margin: 0 auto 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   &--housePage {
     width: 100%;
     color: $color-background;
@@ -202,8 +205,11 @@
     &--name {
       padding: 0 3% 0;
       color: $color-text;
-      font-size: 24px;
+      font-size: 1.1em;
       font-weight: 500;
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 1.4em;
+      }
     }
     &--icon {
       padding: 0 3% 0;
@@ -211,13 +217,19 @@
       font-size: 24px;
       cursor: pointer;
     }
+    .rotation{
+      animation: rotation .5s forwards;
+    }
   }
 
   &_text {
+    position: relative;
     box-sizing: border-box;
     width: 100%;
-    height: auto;
-    padding: 2%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    padding: 3%;
     background-color: $color-text;
     color: $color-background;
     font-size: 1.5em;
@@ -225,7 +237,15 @@
     flex-grow: 1;
     &.open {
       font-weight: 400;
+      height: auto;
       font-size: 1em;
+      animation: apparition .2s forwards;
+    }
+    &.close {
+      font-weight: 400;
+      height: 0;
+      font-size: 0;
+      animation: disparition .2s forwards;
     }
     &-equipment {
       font-family: $font-family;
