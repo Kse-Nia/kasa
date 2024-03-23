@@ -1,9 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
-const HouseRating = ({rating}) => {
-  const stars = [];
+interface HouseRatingProps {
+  rating: number;
+}
+
+const HouseRating: FC<HouseRatingProps> = ({ rating }) => {
+  const stars: JSX.Element[] = [];
 
   for (let i = 1; i <= 5; i++) {
     stars.push(

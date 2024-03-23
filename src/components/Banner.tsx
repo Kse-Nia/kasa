@@ -1,6 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Banner = ({ picture, text }) => {
+interface BannerProps {
+  picture: string;
+  text: string;
+}
+
+const Banner: FC<BannerProps> = ({ picture, text }) => {
   return (
     <section className="banner_section">
       <img className="banner_picture" src={picture} alt="banner" />

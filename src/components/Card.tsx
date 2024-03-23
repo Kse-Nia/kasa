@@ -1,6 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Card = ({cover, title}) => {
+interface CardProps {
+  cover: string;
+  title: string;
+}
+
+const Card: FC<CardProps> = ({ cover, title }) => {
   return (
     <div className="card">
       <img className="card_image" src={cover} alt="" />

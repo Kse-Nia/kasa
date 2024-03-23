@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Slide({ pictures }) {
+interface SlideProps {
+  pictures: string[];
+}
+
+const Slide: FC<SlideProps> = ({ pictures }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const length = pictures.length;
 
@@ -43,9 +47,8 @@ export default function Slide({ pictures }) {
       {pictures.map(
         (picture, index) =>
           index === currentSlide && (
-            <div   key={index} className="slides-container--bloc">
+            <div key={index} className="slides-container--bloc">
               <img
-              
                 src={picture}
                 alt="house image"
                 className="slides-container__img"
@@ -63,4 +66,4 @@ export default function Slide({ pictures }) {
       )}
     </section>
   );
-}
+};
