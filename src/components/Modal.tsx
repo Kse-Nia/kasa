@@ -10,7 +10,7 @@ interface ModalProps {
   className: string;
 }
 
-const Modal: FC<ModalProps> = ({
+export const Modal: FC<ModalProps> = ({
   title,
   content,
   isOpen,

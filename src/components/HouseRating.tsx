@@ -6,7 +6,7 @@ interface HouseRatingProps {
   rating: number;
 }
 
-const HouseRating: FC<HouseRatingProps> = ({ rating }) => {
+ const HouseRating: FC<HouseRatingProps> = ({ rating }) => {
   const stars: JSX.Element[] = [];
 
   for (let i = 1; i <= 5; i++) {
