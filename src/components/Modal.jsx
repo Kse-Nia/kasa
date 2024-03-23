@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import IconOpen from "../assets/row.svg";
-import IconClose from "../assets/row2.svg";
 
 // new icons
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
