@@ -51,7 +51,7 @@ main {
   font-family: "Montserrat", sans-serif;
 }
 .navbar_links-link {
-  font-size: 1.5vw;
+  font-size: 1em;
   color: #000000;
 }
 .navbar_links-link:focus {

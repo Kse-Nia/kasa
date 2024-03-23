@@ -29,7 +29,8 @@
       font-family: $font-family;
     }
     &-link {
-      font-size: 1.5vw;
+      //font-size: 1.5vw;
+      font-size: 1em;
       color: $color-background;
       &:focus {
         border-bottom: 1px solid $color-background;
