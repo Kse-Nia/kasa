@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
 // new icons
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Modal({ title, content, isOpen, onToggle, className }) {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [iconDirection, setIconDirection] = useState("up");
 
   const handleClick = () => {
-    setIsAnimating(true); // Trigger on click
+    setIsAnimating(true);
     onToggle();
+    setIconDirection(isOpen ? "down" : "up");
   };
 
   return (
@@ -17,8 +19,10 @@ export default function Modal({ title, content, isOpen, onToggle, className }) {
       <div className="modal_title">
         <h1 className="modal_title--name">{title}</h1>
         <FontAwesomeIcon
-          className={`modal_title--icon ${isAnimating ? "rotate" : ""}`}
-          icon={faChevronUp}
+          className={`modal_title--icon ${
+            isAnimating ? `rotate-${iconDirection}` : ""
+          }`}
+          icon={iconDirection === "up" ? faChevronUp : faChevronDown} // Choose icon based on direction
           onClick={handleClick}
         />
       </div>
