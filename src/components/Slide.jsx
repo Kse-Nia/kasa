@@ -45,9 +45,8 @@ export default function Slide({ pictures }) {
           index === currentSlide && (
             <div   key={index} className="slides-container--bloc">
               <img
-              
                 src={picture}
-                alt="house image"
+                alt="house"
                 className="slides-container__img"
               />
               {length > 1 && (

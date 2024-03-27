@@ -4,13 +4,11 @@ import Slide from "../components/Slide";
 import Tag from "../components/Tag";
 import HouseRating from "../components/HouseRating";
 import Modal from "../components/Modal";
-import { useParams, useNavigate } from "react-router-dom"; // hook
+import { useParams } from "react-router-dom"; // hook
 
 const House = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [house, setHouse] = useState(null);
-  const [houseFound, setHouseFound] = useState(true);
   const [error, setError] = useState(null);
 
   // Close/Open each type of modal

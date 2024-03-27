@@ -137,7 +137,7 @@
   }
 }
 
-// Page About styles
+//// Modal 2 TEST
 .modal {
   width: 80%;
   height: auto;
@@ -145,8 +145,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: relative;
+  &__container {
+    margin: 5% 0 5%;
+    @include flex-row;
+    justify-content: space-between;
+    align-items: start;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 100%;
+    }
+  }
   &--housePage {
     width: 100%;
     color: $color-background;
@@ -172,26 +184,8 @@
       }
     }
   }
-  @media screen and (max-width: $breakpoint-mobile) {
-    width: 90%;
-    margin: 0 auto 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &__container {
-    margin: 5% 0 5%;
-    @include flex-row;
-    justify-content: space-between;
-    align-items: start;
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      flex-direction: column;
-      align-items: center;
-      min-width: 100%;
-    }
-  }
   &_title {
+    z-index: 2;
     width: 100%;
     height: 50px;
     @include flex-row;
@@ -199,6 +193,11 @@
     justify-content: space-between;
     border-radius: $radius;
     background-color: $color-primary;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    border-bottom: 1px solid #ddd;
     @media screen and (max-width: $breakpoint-mobile) {
       width: 100%;
     }
@@ -216,42 +215,25 @@
       color: $color-text;
       font-size: 24px;
       cursor: pointer;
-    }
-    .rotation {
-      animation: rotation 0.5s forwards;
+      transition: transform 0.35s linear;
+      &.rotate {
+        transform: rotate(180deg);
+        transition: transform 0.5s ease-in-out;
+      }
     }
   }
-
   &_text {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-
-    padding: 3%;
-    background-color: $color-text;
-    color: $color-background;
-    font-size: 1.5em;
-    font-weight: 400;
-    flex-grow: 1;
+    padding: 1rem;
+    opacity: 0;
+    transition: transform 0.35s linear;
     &.open {
-      font-weight: 400;
-      height: auto;
-      font-size: 1em;
-      animation: apparition 0.2s forwards;
+      z-index: 1;
+      opacity: 1;
+      animation: apparition 5s ease-in-out forwards;
+      transform: translateY(0);
     }
     &.close {
-      font-weight: 400;
-      height: 0;
-      font-size: 0;
-      animation: disparition 0.2s forwards;
-    }
-    &-equipment {
-      font-family: $font-family;
-      font-weight: 400;
-      margin: 1% 0 0;
-      color: $color-background;
+      opacity: 0;
     }
   }
 }
@@ -266,14 +248,12 @@
   align-items: center;
   align-content: space-between;
   font-family: $font-family;
-
   p:nth-child(1) {
     margin: 0;
     font-size: 15em;
     font-weight: 700;
     color: $color-primary;
   }
-
   p:nth-child(2) {
     margin: 3% 0 7%;
     font-size: 1.8em;
@@ -484,8 +464,6 @@
   min-height: 25vh;
   height: auto;
   margin-top: auto;
-  //bottom: 0;
-  //position: absolute;
   background-color: $color-background;
   color: $color-text;
   font-size: $font-size;

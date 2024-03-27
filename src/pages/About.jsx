@@ -11,12 +11,12 @@ const About = () => {
   const [openModalIds, setOpenModalIds] = useState(new Set()); // Set of open modals id
 
   const onToggle = (id) => {
-    setOpenModalIds(prevIds => {
-      const newIds = new Set(prevIds); 
+    setOpenModalIds((prevIds) => {
+      const newIds = new Set(prevIds);
       if (newIds.has(id)) {
-        newIds.delete(id); 
+        newIds.delete(id);
       } else {
-        newIds.add(id); 
+        newIds.add(id);
       }
       return newIds;
     });
@@ -39,12 +39,12 @@ const About = () => {
     fetchData();
   }, []);
 
-
   return (
     <section className="about">
       <div>
         <Banner picture={Picture} />
       </div>
+      {error && <div>Impossible d'afficher. Erreur : {error}</div>}
       {data &&
         data.map((section, index) => (
           <Modal
@@ -52,7 +52,7 @@ const About = () => {
             title={section.title}
             content={section.text}
             isOpen={openModalIds.has(index)}
-          onToggle={() => onToggle(index)}
+            onToggle={() => onToggle(index)}
           />
         ))}
     </section>
