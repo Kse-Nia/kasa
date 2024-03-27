@@ -229,7 +229,7 @@
     &.open {
       z-index: 1;
       opacity: 1;
-      animation: apparition .6s ease-in-out forwards;
+      animation: apparition .35s ease-in-out forwards;
       transform: translateY(0);
     }
     &.close {

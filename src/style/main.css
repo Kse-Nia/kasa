@@ -312,7 +312,7 @@ footer {
 .modal_text.open {
   z-index: 1;
   opacity: 1;
-  animation: apparition 0.6s ease-in-out forwards;
+  animation: apparition 0.35s ease-in-out forwards;
   transform: translateY(0);
 }
 .modal_text.close {
