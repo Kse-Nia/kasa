@@ -137,7 +137,7 @@
   }
 }
 
-//// Modal 2 TEST
+//// Modal
 .modal {
   width: 80%;
   height: auto;
@@ -195,7 +195,6 @@
     background-color: $color-primary;
     display: flex;
     justify-content: space-between;
-
     align-items: center;
     border-bottom: 1px solid #ddd;
     @media screen and (max-width: $breakpoint-mobile) {
@@ -215,12 +214,13 @@
       color: $color-text;
       font-size: 24px;
       cursor: pointer;
-      //transition: transform 0.35s ease-in;
       &.rotate-up {
-        animation: rotation 0.35s ease-in forwards;
+        transform: rotate(0deg);
+        transition: transform 0.35s ease-in;
       }
       &.rotate-down {
-        animation: rotation-back 0.35s ease-in forwards;
+        transform: rotate(180deg);
+        transition: transform 0.35s ease-in;
       }
     }
   }
