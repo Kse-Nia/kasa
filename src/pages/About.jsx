@@ -40,22 +40,26 @@ const About = () => {
   }, []);
 
   return (
+    <main>
     <section className="about">
       <div>
         <Banner picture={Picture} />
       </div>
       {error && <div>Impossible d'afficher. Erreur : {error}</div>}
-      {data &&
-        data.map((section, index) => (
-          <Modal
-            key={index}
-            title={section.title}
-            content={section.text}
-            isOpen={openModalIds.has(index)}
-            onToggle={() => onToggle(index)}
-          />
-        ))}
+      <div className="about__content">
+        {data &&
+          data.map((section, index) => (
+            <Modal
+              key={index}
+              title={section.title}
+              content={section.text}
+              isOpen={openModalIds.has(index)}
+              onToggle={() => onToggle(index)}
+            />
+          ))}
+      </div>
     </section>
+    </main>
   );
 };
 

@@ -6,9 +6,10 @@
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
@@ -20,8 +21,11 @@ body {
 
 main {
   height: auto;
-  margin: 0 5vw 0;
   flex: 1 0 auto;
+}
+
+#house {
+  margin: 0 5% 0;
 }
 
 footer {
@@ -41,7 +45,7 @@ footer {
     transform: rotate(180deg);
   }
   to {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes apparition {
@@ -95,6 +99,7 @@ footer {
 @media screen and (max-width: 800px) {
   .navbar_links {
     min-width: 45%;
+    text-transform: uppercase;
   }
 }
 .navbar_links ul {
@@ -119,7 +124,7 @@ footer {
 .banner_section {
   width: auto;
   height: 225px;
-  margin: 0 5% 5%;
+  margin: 0 5% 2%;
   border-radius: 10px;
   background-color: #000000;
   position: relative;
@@ -164,10 +169,15 @@ footer {
   padding: 3%;
   background-color: #f6f6f6;
   border-radius: 10px;
+  /*  @include flex-row;
+  flex-wrap: wrap;
+  justify-content: space-between; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  align-content: normal;
 }
 @media screen and (max-width: 800px) {
   .container {
@@ -183,8 +193,13 @@ footer {
   margin: 0 0 5%;
   border-radius: 10px;
   color: #ffffff;
-  display: flex;
   position: relative;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
 }
 @media screen and (max-width: 800px) {
   .container .card {
@@ -263,7 +278,7 @@ footer {
 .modal_title {
   z-index: 2;
   width: 100%;
-  height: 50px;
+  height: calc(50px + 1vh);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -278,6 +293,7 @@ footer {
 @media screen and (max-width: 800px) {
   .modal_title {
     width: 100%;
+    height: calc(30px + 2vh);
   }
 }
 .modal_title--name {
@@ -298,10 +314,12 @@ footer {
   cursor: pointer;
 }
 .modal_title--icon.rotate-up {
-  animation: rotation 0.35s ease-in forwards;
+  transform: rotate(0deg);
+  transition: transform 0.35s ease-in;
 }
 .modal_title--icon.rotate-down {
-  animation: rotation-back 0.35s ease-in forwards;
+  transform: rotate(180deg);
+  transition: transform 0.35s ease-in;
 }
 .modal_text {
   padding: 1rem;
@@ -376,6 +394,7 @@ footer {
   }
 }
 .house_rating {
+  min-width: 195px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -401,7 +420,7 @@ footer {
   font-size: 18px;
 }
 .house_title {
-  font-size: 2em;
+  font-size: 1.7em;
   font-weight: 500;
   margin: 2% 0;
   color: #ff6060;
@@ -433,7 +452,7 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .host__maincontainer--picture {
   border-radius: 50%;
@@ -564,8 +583,7 @@ footer {
 .footer {
   flex-shrink: 0;
   width: 100%;
-  min-height: 25vh;
-  height: auto;
+  min-height: 30vh;
   margin-top: auto;
   background-color: #000000;
   color: #ffffff;
@@ -595,10 +613,17 @@ footer {
 }
 
 .about {
-  min-height: 70vh;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-@media screen and (max-width: 800px) {
-  .about {
-    min-height: 40vh;
-  }
+.about__content {
+  width: 100%;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: space-evenly;
+  gap: 20px;
 }/*# sourceMappingURL=main.css.map */

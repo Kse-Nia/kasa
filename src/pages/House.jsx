@@ -54,7 +54,7 @@ const House = () => {
   const [firstName, lastName] = name.split(" ");
 
   return (
-    <main>
+    <main id="house">
       <section className="house">
         <div className="container--house">
           <Slide pictures={house.pictures} />

@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./style/main.css";
 //import "./index.css";
 
-import AppLayout from "./Utils/Outlet";
+import AppLayout from "./Utils/AppLayout";
 
 // Pages
 import ErrorPage from "./pages/Error404";
