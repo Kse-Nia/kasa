@@ -411,7 +411,6 @@ footer {
   }
 }
 .house_rating {
-  min-width: 195px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -427,6 +426,7 @@ footer {
 @media screen and (max-width: 800px) {
   .house_rating {
     max-width: 35%;
+    min-width: 0;
     font-size: 1.6em;
   }
 }
