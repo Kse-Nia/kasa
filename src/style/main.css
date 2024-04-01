@@ -69,10 +69,11 @@ footer {
   }
 }
 .navbar {
-  margin: 2% 5% 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 2% 5% 2%;
+  padding: 0;
 }
 .navbar_logo {
   max-width: 10vw;
@@ -91,14 +92,13 @@ footer {
      object-fit: contain;
 }
 .navbar_links {
-  min-width: 30%;
+  min-width: 20%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 @media screen and (max-width: 800px) {
   .navbar_links {
-    min-width: 45%;
+    min-width: 25%;
     text-transform: uppercase;
   }
 }
@@ -106,21 +106,35 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.navbar_links li {
-  margin: 0 5% 0;
+.navbar_links ul li {
+  font-size: 1.2em;
   font-family: "Montserrat", sans-serif;
   justify-content: space-between;
 }
+.navbar_links ul li:not(:last-child) {
+  margin-right: 1rem;
+}
 .navbar_links-link {
-  font-size: 1.2em;
+  text-decoration: none;
   color: #000000;
 }
 .navbar_links-link:focus {
   border-bottom: 1px solid #000000;
 }
+.navbar_links-link:last-child {
+  margin-right: 0;
+}
 
+@media (min-width: 768px) {
+  .navbar_links ul li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .banner_section {
   width: auto;
   height: 225px;
@@ -169,9 +183,6 @@ footer {
   padding: 3%;
   background-color: #f6f6f6;
   border-radius: 10px;
-  /*  @include flex-row;
-  flex-wrap: wrap;
-  justify-content: space-between; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -225,7 +236,7 @@ footer {
 }
 
 .modal {
-  width: 80%;
+  width: 85%;
   height: auto;
   margin: 0 auto 2%;
   display: flex;
@@ -233,8 +244,13 @@ footer {
   justify-content: center;
   position: relative;
 }
+@media screen and (max-width: 800px) {
+  .modal {
+    width: 90%;
+  }
+}
 .modal__container {
-  margin: 5% 0 5%;
+  margin: 3% 0 3%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -246,6 +262,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     min-width: 100%;
+    min-height: 20vh;
   }
 }
 .modal--housePage {
@@ -284,7 +301,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  background-color: #ff6060;
+  background-color: #FF6060;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -350,13 +367,13 @@ footer {
   margin: 0;
   font-size: 15em;
   font-weight: 700;
-  color: #ff6060;
+  color: #FF6060;
 }
 .error_container p:nth-child(2) {
   margin: 3% 0 7%;
   font-size: 1.8em;
   font-weight: 500;
-  color: #ff6060;
+  color: #FF6060;
 }
 .error_container .error-navlink {
   margin-bottom: 5%;
@@ -403,15 +420,15 @@ footer {
   margin-top: 5%;
 }
 .house_rating-on {
-  color: #ff6060;
+  color: #FF6060;
 }
 .house_rating-off {
   color: #e3e3e3;
 }
 @media screen and (max-width: 800px) {
   .house_rating {
-    max-width: 50%;
-    font-size: 1em;
+    max-width: 35%;
+    font-size: 1.6em;
   }
 }
 .house_location {
@@ -423,11 +440,11 @@ footer {
   font-size: 1.7em;
   font-weight: 500;
   margin: 2% 0;
-  color: #ff6060;
+  color: #FF6060;
 }
 
 .house__tags {
-  margin-top: 3%;
+  margin: 3% 0 2%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -438,7 +455,7 @@ footer {
   min-height: 30px;
   margin-right: 10px;
   padding: 0 30px 0;
-  background-color: #ff6060;
+  background-color: #FF6060;
   color: #e3e3e3;
   border-radius: 20px;
   align-items: center;
@@ -447,6 +464,11 @@ footer {
 
 .host {
   display: flex;
+}
+@media screen and (max-width: 800px) {
+  .host {
+    margin-bottom: 5%;
+  }
 }
 .host__maincontainer {
   width: 100%;
@@ -462,7 +484,7 @@ footer {
   .host__maincontainer {
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-top: 3%;
+    margin-top: 1em;
   }
 }
 .host__container {
@@ -490,7 +512,7 @@ footer {
   flex-direction: column;
 }
 .host--name {
-  color: #ff6060;
+  color: #FF6060;
   margin-right: 10px;
   font-size: 1em;
   white-space: pre-wrap;
@@ -513,7 +535,7 @@ footer {
   border-radius: 10px;
   font-size: 1.2em;
   font-weight: 500;
-  background-color: #ff6060;
+  background-color: #FF6060;
   width: 40%;
   min-height: 40px;
   margin: 1%;
@@ -527,7 +549,7 @@ footer {
   justify-content: center;
 }
 .description .house_modal {
-  background-color: #ff6060;
+  background-color: #FF6060;
   display: flex;
   flex-direction: column;
 }
@@ -584,7 +606,7 @@ footer {
   flex-shrink: 0;
   width: 100%;
   min-height: 30vh;
-  margin-top: auto;
+  margin-top: 3em;
   background-color: #000000;
   color: #ffffff;
   font-size: 1.2em;
@@ -619,6 +641,7 @@ footer {
   justify-content: space-evenly;
 }
 .about__content {
+  margin-top: 1em;
   width: 100%;
   min-height: 45vh;
   display: flex;
@@ -626,4 +649,14 @@ footer {
   justify-content: flex-start;
   justify-content: space-evenly;
   gap: 20px;
+}
+
+#modal_title-about {
+  height: calc(65px + 1vh);
+}
+@media screen and (max-width: 800px) {
+  #modal_title-about {
+    height: calc(40px + 1vh);
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=main.css.map */

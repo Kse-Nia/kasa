@@ -53,6 +53,7 @@ const About = () => {
               key={index}
               title={section.title}
               content={section.text}
+              id="modal_title-about"
               isOpen={openModalIds.has(index)}
               onToggle={() => onToggle(index)}
             />
